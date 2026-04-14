@@ -2,8 +2,9 @@ h1 {
     color: #333;
     text-align: center;
     margin-top: 20px;
-  font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
 }
+
 p {
     color: #02f8b7;
     font-size: 16px;
@@ -22,6 +23,25 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
-    background: #333 url('./background.jpeg') center / cover no-repeat;
+    background: radial-gradient(circle at 20% 20%, #f3f5f7 0%, #d8dde2 55%, #bcc3ca 100%);
+    z-index: -2;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('./background.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: min(40vw, 232px) auto;
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.18));
     z-index: -1;
+    pointer-events: none;
+}
+
+@media (max-width: 600px) {
+    body::after {
+        background-size: min(70vw, 232px) auto;
+    }
 }
