@@ -1,3 +1,4 @@
+/* 見出しの基本スタイル */
 h1 {
     color: #333;
     text-align: center;
@@ -5,6 +6,7 @@ h1 {
     font-family: Arial, sans-serif;
 }
 
+/* 本文テキストの読みやすさ調整 */
 p {
     color: #02f8b7;
     font-size: 16px;
@@ -13,12 +15,14 @@ p {
     font-family: Arial, sans-serif;
 }
 
+/* ページ全体のレイアウト基準 */
 body {
     margin: 0;
     min-height: 100vh;
     position: relative;
 }
 
+/* 背景の下地グラデーション（最背面） */
 body::before {
     content: "";
     position: fixed;
@@ -27,6 +31,7 @@ body::before {
     z-index: -2;
 }
 
+/* 画像レイヤーを固定表示（拡大しすぎを防ぐ） */
 body::after {
     content: "";
     position: fixed;
@@ -40,6 +45,7 @@ body::after {
     pointer-events: none;
 }
 
+/* スマホ幅では少し大きめに見せる */
 @media (max-width: 600px) {
     body::after {
         background-size: min(70vw, 232px) auto;
